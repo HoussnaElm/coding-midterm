@@ -1,0 +1,297 @@
+@font-face {
+    font-family: 'OmahaDings' ;
+    src: url('OmahaDings/Omahadin.ttf') format('truetype');
+    font-family: 'Couture';
+    src: url('COUTURE/COUTURE-Bold.ttf') format('truetype');
+    font-family: 'Code';
+    src: url(fonts/Code_Bold/CODE_Bold.otf) format('truetype');
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    
+    background-color: floralwhite;
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    min-height: 100vh; /* Prend toute la hauteur de l'écran */
+    margin: 0; /* Enlève les marges par défaut du body */
+    overflow: hidden;
+}
+
+
+/* Conteneur principal d'images */
+.image-container {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Dispose les images les unes sous les autres */
+    justify-content: flex-start; /* Aligne les images en haut du conteneur */
+    align-items: center; /* Centre les images horizontalement */
+    height: 100vh; /* Hauteur de 80% de la fenêtre pour voir une partie du défilement */
+    width: 100%; /* Largeur du conteneur */
+    overflow-y: auto; /* Permet le défilement vertical si les images sont trop grandes */
+    padding: 10px 0; /* Padding autour des images */
+    box-sizing: border-box; 
+    overflow-y: scroll; /* Permet le défilement vertical */
+    scroll-snap-type: y mandatory; /* Fait défiler l'image une par une */
+}
+
+/* Style pour chaque image */
+.image-container img {
+    flex: 0 0 calc(100% / 6); /* Chaque image prend un sixième de la largeur du conteneur */
+    max-width: 50vh; /* Maximum à 16.66% de la largeur de l'écran */
+    height: auto; /* Hauteur automatique pour garder les proportions */
+   
+    margin: 30vh 0; /* Espacement vertical entre les images */
+    object-fit: cover; /* Remplir l'espace sans déformer l'image */
+    transition: transform 0.3s ease; /* Effet de zoom au survol */
+
+    border: 5px solid #fff; /* Ajoute un cadre blanc autour de l'image */
+    scroll-snap-align: center;
+
+}
+
+.item-container:hover img {
+    transform: scale(1.75);
+}
+
+.image-hover {
+   transform: scale(1.75);
+}
+
+.hover-text5 {
+    position: absolute;
+    top: 100%;
+    left: 45%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    color: #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+
+
+/* Affiche au hover */
+.item-container:hover .hover-text5 {
+    opacity: 1;
+}
+
+.fitting{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Conteneur des boutons */
+.button-container {
+    
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 colonnes */
+  grid-template-rows: repeat(2, auto);    /* 2 lignes (hauteur auto selon contenu) */
+  gap: 8vh 5vw;                          /* espace vertical et horizontal */
+  margin: 10vh auto;                      
+  justify-content: center;
+  justify-items: center;   
+  width: fit-content;
+}
+
+/* Style des boutons */
+button {
+    background-color: transparent;
+    color: #1c4205;
+    padding: 20px 32px;      /* <= le ; est OBLIGATOIRE ici */
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    border: none;
+}
+
+/* Effet lors du survol */
+button:hover {
+    background-color: transparent;   /* Pas de fond lors du survol */
+    color: #d44b28;                  /* Change la couleur du texte lors du survol */
+    border-color: transparent;       /* Pas de bordure au survol */
+}
+
+.button-hover{
+    position: relative;
+    text-align: center;
+}
+
+.hover-image{
+    position: absolute;
+    top: -12px;
+    left: 90%;
+    transform: translateX(-40%);
+    width: 45vw;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+
+}
+
+.hover-image1{
+    position: absolute;
+    bottom: -250%;
+    left: 50%;
+    transform: translateX(-55%);
+    width: 35vw;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+
+}
+
+.hover-image2{
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(5%);
+    width: 22vw;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+
+}
+
+.button-hover:hover .hover-image1 {
+    opacity: 1;
+}
+.button-hover:hover .hover-image2 {
+    opacity: 1;
+}
+.button-hover:hover .hover-image {
+    opacity: 1;
+}
+
+.hover-text {
+    position: absolute;
+    top: -3rem;
+    left: 47%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    color: #d44b28;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-text1 {
+    position: absolute;
+    top: -3rem;
+    left: 45%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    color: #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-text2 {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(5%);
+    font-size: 28px;
+    color: #d44b28;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-text3 {
+    position: absolute;
+    bottom: -50%;
+    left: -100%;
+    transform: translateX(5%);
+    font-size: 28px;
+    color: #d44b28;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-text4 {
+    position: absolute;
+    bottom: -50%;
+    left: 70%;
+    transform: translateX(5%);
+    font-size: 28px;
+    color: #d44b28;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+
+  .button-hover:hover .hover-text {
+    opacity: 1;
+  }
+  .button-hover:hover .hover-text1 {
+    opacity: 1;
+  }
+  .button-hover:hover .hover-text2 {
+    opacity: 1;
+  }
+  .button-hover:hover .hover-text3 {
+    opacity: 1;
+  }
+  .button-hover:hover .hover-text4 {
+    opacity: 1;
+  }
+
+.logo {
+    position: fixed; 
+    top: 5vh; 
+    left: 5vh; 
+    width: 15vh; 
+    height: auto; 
+    z-index: 1000; 
+}
+
+.logo1 {
+    width: 15vw;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+.logo2 {
+    position: fixed; /* Le logo est fixé à l'écran, même lors du défilement */
+    top: 5vh; /* Décalage de 10px par rapport au haut de l'écran */
+    left: 5vh; /* Décalage de 10px par rapport au côté gauche de l'écran */
+    width: 15vh; /* Largeur du logo (ajuste selon la taille souhaitée) */
+    height: auto; /* Maintient les proportions du logo */
+    z-index: 1000; /* Assure que le logo reste au-dessus des autres éléments */
+}
+
+.logo-container {
+    display: flex;
+    gap: 6rem;
+    padding: 0 5vw;
+  }
+
+a {
+    text-decoration: none; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    font-style: normal;
+    font-weight: bold;
+}
+
